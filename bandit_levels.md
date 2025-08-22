@@ -39,3 +39,31 @@ contribute to the OverTheWire community so we can keep these games free!
 
 The password you are looking for is: [password]
 # Successfully read the contents and obtained the Level 1 password
+
+
+## Level 1 -> 2
+
+### Date Completed: 2025-08-22
+
+### Level Goal
+> Find the password for level 2
+
+### Level Instructions / Hint
+> The password for the next level is stored in a file called - located in the home directory
+
+### Initial Thoughts
+> I need to locate and read the "-" file. I tried some commands to find it and understand its type before successfully reading its contents.
+
+### Commands Tried
+```bash
+cat -
+# output: 
+# Learned that 'cat -' is an incomplete command
+
+ls - 
+# output: -
+# Confirms that the - file exists in the current directory
+
+cat ./-
+# output: [password]
+# Successfully read the contents and obtained the Level 2 password
