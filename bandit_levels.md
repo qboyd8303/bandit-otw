@@ -1,6 +1,6 @@
 ## Level 0 → 1
 
-### Date Completed: 2025-08-21
+### Date Completed: August 21, 2025
 
 ### Level Goal
 > Find the password for Level 1.
@@ -9,7 +9,7 @@
 > The password for the next level is stored in a file called readme located in the home directory. Use this password to log into bandit1 using SSH. Whenever you find a password for a level, use SSH (on port 2220) to log into that level and continue the game.
 
 ### Initial Thoughts
-> I need to locate and read the `readme` file. I tried several commands to find it and understand its type before successfully reading its contents.
+> I need to locate and read the readme file. I will likely need to test commands for listing files and reading them.
 
 ### Commands Attempted
 ```bash
@@ -28,7 +28,7 @@ ls readme
 
 cd readme
 # output: -bash: cd: readme: Not a directory
-# Learned that readme is a file, not a folder
+# Learned that readme is a file, not a directory
 ```
 
 ### Successful Solution
@@ -41,11 +41,11 @@ cat readme
 ### What I Learned
 - 'cd' only works on directories, not files
 - 'cat' displays file contents
-- Errors can help identify object types.
+- Error messages are helpful to determine whether something is a file or directory.
 
 ## Level 1 → 2
 
-### Date Completed: 2025-08-22
+### Date Completed: August 22, 2025
 
 ### Level Goal
 > Find the password for level 2.
@@ -54,13 +54,13 @@ cat readme
 > The password for the next level is stored in a file called - located in the home directory.
 
 ### Initial Thoughts
-> I need to locate and read the "-" file. I tried some commands to find it and understand its type before successfully reading its contents.
+> I need to locate and read the "-" file.
 
 ### Commands Attempted
 ```bash
 cat -
 # output: 
-# Learned that 'cat -' is an incomplete command
+# Learned this is interpreted as standard input, not a file
 
 ls - 
 # output: -
@@ -75,12 +75,13 @@ cat ./-
 ```
 
 ### What I Learned
-- When using a command with a dashed filename, prefix the filename with ./
+- Filenames beginning with - can confuse commands
+- Prefixing with ./ ensures the file is interpreted as a filename instead of a flag
 
 
 ## Level 2 → 3
 
-### Date Completed: 2025-08-22
+### Date Completed: August 22, 2025
 
 ### Level Goal
 > Find the password for level 3.
@@ -89,7 +90,7 @@ cat ./-
 > The password for the next level is stored in a file called --spaces in this filename-- located in the home directory.
 
 ### Initial Thoughts
-> I need to figure out what is special about spaces in a filename and using commands with them. I then need to locate and read the "--spaces in this filename--" file. I tried one command after learning how to prefix filenames with spaces in them.
+> I need to figure out what is special about spaces in a filename and using commands with them. I then need to locate and read the "--spaces in this filename--" file. I'll review the helpful reading material before beginning.
 
 ### Successful Solution
 ```bash
@@ -99,12 +100,12 @@ cat ./"--spaces in this filename--"
 ```
 
 ### What I Learned
-- Filenames with spaces in them need to be enclosed in quotations to be recognized
+- Filenames with spaces must be enclosed in quotes or escaped with backslashes
 
 
 ## Level 3 → 4
 
-### Date Completed: 2025-08-22
+### Date Completed: August 22, 2025
 
 ### Level Goal
 > Find the password for level 4.
@@ -113,13 +114,13 @@ cat ./"--spaces in this filename--"
 > The password for the next level is stored in a hidden file in the inhere directory.
 
 ### Initial Thoughts
-> I need to learn how to show hidden files within a directory, then locate and read the hidden file.
+> I need to learn how to show hidden files within a directory, then I can open it with cat.
 
 ### Commands Attempted
 ```bash
 cd ~inhere
 # output: -bash: cd: ~inhere: No such file or directory
-# Confirms no such directory exists
+# Learned '~inhere' is invalid
 
 cd inhere
 # output: ~/inhere$
@@ -150,4 +151,5 @@ cat ...Hiding-From-You
 ```
 
 ### What I Learned
-- The command for locating hidden files is -a
+- Hidden files in Linux start with a . and don’t show up unless you use ls -a
+- Directories (cd) and files (cat) behave differently, and errors help clarify which is which
