@@ -39,12 +39,11 @@ cat readme
 ```
 
 ### What I Learned
-- 'cd' only works on directories, not files.
-- 'cat' displays file contents.
+- 'cd' only works on directories, not files
+- 'cat' displays file contents
 - Errors can help identify object types.
 
-
-## Level 1 -> 2
+## Level 1 → 2
 
 ### Date Completed: 2025-08-22
 
@@ -77,3 +76,27 @@ cat ./-
 
 ### What I Learned
 - When using a command with a dashed filename, prefix the filename with ./
+
+
+## Level 2 → 3
+
+### Date Completed: 2025-08-22
+
+### Level Goal
+> Find the password for level 3.
+
+### Level Instructions / Hint
+> The password for the next level is stored in a file called --spaces in this filename-- located in the home directory.
+
+### Initial Thoughts
+> I need to figure out what is special about spaces in a filename and using commands with them. I then need to locate and read the "--spaces in this filename--" file. I tried one command after learning how to prefix filenames with spaces in them.
+
+### Successful Solution
+```bash
+cat ./"--spaces in this filename--"
+# output: [password]
+# Successfully read the contents and obtained the Level 3 password
+```
+
+### What I Learned
+- Filenames with spaces in them need to be enclosed in quotations to be recognized
