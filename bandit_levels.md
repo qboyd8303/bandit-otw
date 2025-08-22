@@ -9,9 +9,9 @@
 > The password for the next level is stored in a file called readme located in the home directory. Use this password to log into bandit1 using SSH. Whenever you find a password for a level, use SSH (on port 2220) to log into that level and continue the game.
 
 ### Initial Thoughts
-> I needed to locate and read the `readme` file. I tried several commands to find it and understand its type before successfully reading its contents.
+> I need to locate and read the `readme` file. I tried several commands to find it and understand its type before successfully reading its contents.
 
-### Commands Tried
+### Commands Attempted
 ```bash
 find file readme
 # output: find: ‘file’: No such file or directory
@@ -29,16 +29,19 @@ ls readme
 cd readme
 # output: -bash: cd: readme: Not a directory
 # Learned that readme is a file, not a folder
+```
 
+### Successful Solution
+```bash
 cat readme
-# output: Congratulations on your first steps into the bandit game!!
-Please make sure you have read the rules at https://overthewire.org/rules/
-If you are following a course, workshop, walkthrough or other educational activity,
-please inform the instructor about the rules as well and encourage them to
-contribute to the OverTheWire community so we can keep these games free!
-
-The password you are looking for is: [password]
+# output: The password you are looking for is: [password]
 # Successfully read the contents and obtained the Level 1 password
+```
+
+### What I Learned
+- 'cd' only works on directories, not files.
+- 'cat' displays file contents.
+- Errors can help identify object types.
 
 
 ## Level 1 -> 2
@@ -46,15 +49,15 @@ The password you are looking for is: [password]
 ### Date Completed: 2025-08-22
 
 ### Level Goal
-> Find the password for level 2
+> Find the password for level 2.
 
 ### Level Instructions / Hint
-> The password for the next level is stored in a file called - located in the home directory
+> The password for the next level is stored in a file called - located in the home directory.
 
 ### Initial Thoughts
 > I need to locate and read the "-" file. I tried some commands to find it and understand its type before successfully reading its contents.
 
-### Commands Tried
+### Commands Attempted
 ```bash
 cat -
 # output: 
@@ -63,7 +66,14 @@ cat -
 ls - 
 # output: -
 # Confirms that the - file exists in the current directory
+```
 
+### Successful Solution
+```bash
 cat ./-
 # output: [password]
 # Successfully read the contents and obtained the Level 2 password
+```
+
+### What I Learned
+- When using a command with a dashed filename, prefix the filename with ./
