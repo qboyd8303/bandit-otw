@@ -100,3 +100,54 @@ cat ./"--spaces in this filename--"
 
 ### What I Learned
 - Filenames with spaces in them need to be enclosed in quotations to be recognized
+
+
+## Level 3 → 4
+
+### Date Completed: 2025-08-22
+
+### Level Goal
+> Find the password for level 4.
+
+### Level Instructions / Hint 
+> The password for the next level is stored in a hidden file in the inhere directory.
+
+### Initial Thoughts
+> I need to learn how to show hidden files within a directory, then locate and read the hidden file.
+
+### Commands Attempted
+```bash
+cd ~inhere
+# output: -bash: cd: ~inhere: No such file or directory
+# Confirms no such directory exists
+
+cd inhere
+# output: ~/inhere$
+# I am now operating inside the inhere directory
+
+cat inhere
+# output: cat: inhere: No such file or directory
+# There is no "inhere" file within the inhere directory to display contents of
+
+ls "hidden files"
+# output: ls: cannot access 'hidden files': No such file or directory
+# There is no "hidden files" file within the inhere directory to display
+
+cat all
+# output: cat: all: No such file or directory
+# There is no "cat" file within the inhere directory to display contents of
+```
+
+### Successful Solution
+```bash
+ls -a
+# output: .  ..  ...Hiding-From-You
+# Successfully located hidden file within inhere directory
+
+cat ...Hiding-From-You
+# output: [password]
+# Successfully read the contents and obtained the Level 4 password
+```
+
+### What I Learned
+- The command for locating hidden files is -a
