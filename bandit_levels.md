@@ -153,3 +153,46 @@ cat ...Hiding-From-You
 ### What I Learned
 - Hidden files in Linux start with a . and don’t show up unless you use ls -a
 - Directories (cd) and files (cat) behave differently, and errors help clarify which is which
+
+
+## Level 4 → 5
+
+### Date Completed: August 22. 2025
+
+### Level Goal
+> Find the password for level 5.
+
+### Level Instructions / Hint 
+> The password for the next level is stored in the only human-readable file in the inhere directory. Tip: if your terminal is messed up, try the “reset” command.
+
+### Initial Thoughts
+> I need to enter the inhere directory and locate a plain text file.
+
+### Commands Attempted
+```bash
+cd inhere
+# output: /inhere$ 
+# I am successfully in the inhere directory
+
+ls
+# output: -file00  -file01  -file02  -file03  -file04  -file05  -file06  -file07  -file08  -file09
+# Contents of inhere directory are now shown
+
+cat ./-file09
+# output: I   0 V ;C r  A<D t    ` 
+# This is not a human readable file
+
+cat ./-file08
+# output: 2;  ɸd$7_ n F   9     'uڢ  i
+# This is not a human readable file
+```
+
+### Successful Solution
+```bash
+cat ./-file07
+# output: 4oQYVPkxZOOEOO5pTW81FB8j8lxXGUQw
+# Successfully read the contents and obtained the level 5 password
+```
+
+### What I Learned
+- You can use cat to display contents of a file or file to determine the type of a given file
