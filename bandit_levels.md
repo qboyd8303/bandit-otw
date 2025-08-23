@@ -190,7 +190,7 @@ cat ./-file08
 ### Successful Solution
 ```bash
 cat ./-file07
-# output: 4oQYVPkxZOOEOO5pTW81FB8j8lxXGUQw
+# output: [password]
 # Successfully read the contents and obtained the level 5 password
 ```
 
