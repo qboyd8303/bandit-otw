@@ -196,3 +196,64 @@ cat ./-file07
 
 ### What I Learned
 - You can use cat to display contents of a file or file to determine the type of a given file
+
+
+## Level 5 → 6
+
+### Date Completed: August 22. 2025
+
+### Level Goal
+> Find the password for level 6.
+
+### Level Instructions / Hint 
+> The password for the next level is stored in a file somewhere under the inhere directory and has all of the following properties:
+
+human-readable
+1033 bytes in size
+not executable
+
+### Initial Thoughts
+> I understand that human-readable files are just plain text files. I need to learn the command for searching files based on size and executability in conjunction with the find command.
+
+### Commands Attempted
+```bash
+cd inhere
+# output: /inhere$
+# I am now inside the inhere directory
+
+ls
+# output: maybehere00  maybehere02  maybehere04  maybehere06  maybehere08  maybehere10  maybehere12  maybehere14  maybehere16  maybehere18
+maybehere01  maybehere03  maybehere05  maybehere07  maybehere09  maybehere11  maybehere13  maybehere15  maybehere17  maybehere19
+# All the contents of the inhere directory are displayed
+
+find . -size 1033c ! -executable
+# output: ./maybehere07/.file2
+# The file that meets the search criteria is displayed
+
+cat maybehere07
+# output: cat: maybehere07: Is a directory
+# Learned that maybehere07 is a directory and not a file
+
+cd maybehere07
+# output: /inhere/maybehere07$
+# I am now inside the maybehere07 directory within the inhere directory
+
+ls
+# output: -file1  -file2  -file3  spaces file1  spaces file2  spaces file3
+# All the contents of the maybehere07 directory are displayed
+```
+
+### Successful Solution
+```bash
+cat ./-file2
+# output: [password]
+# Successfully read the contents and obtained the level 6 password
+```
+
+### What I Learned
+- The find command is used to locate files based on various criteria
+- The command for searching based on size is -size Nc and c is the suffix that indicates bytes. The c suffix is placed directly after the amount of bytes, N
+- The k suffix indicates kilobytes, M indicates megabytes, and G indicates gigabytes
+- To find files larger than N bytes, use +Nc or -Nc for files smaller than N bytes
+- ! represents the negation of a criteria so ! -executable searches for files that are not executable
+- Directories so far have been color coded as blue
