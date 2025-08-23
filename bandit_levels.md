@@ -213,7 +213,7 @@ human-readable
 not executable
 
 ### Initial Thoughts
-> I understand that human-readable files are just plain text files. I need to learn the command for searching files based on size and executability in conjunction with the find command.
+> I am familiar with the readable command. I need to learn the command for searching files based on size and executability in conjunction with the find command.
 
 ### Commands Attempted
 ```bash
@@ -241,11 +241,15 @@ cd maybehere07
 ls
 # output: -file1  -file2  -file3  spaces file1  spaces file2  spaces file3
 # All the contents of the maybehere07 directory are displayed
+
+ls -a
+# output: .  ..  -file1  .file1  -file2  .file2  -file3  .file3  spaces file1  spaces file2  spaces file3
+# All the hidden contents of the maybehere07 directory are displayed
 ```
 
 ### Successful Solution
 ```bash
-cat ./-file2
+cat .file2
 # output: [password]
 # Successfully read the contents and obtained the level 6 password
 ```
